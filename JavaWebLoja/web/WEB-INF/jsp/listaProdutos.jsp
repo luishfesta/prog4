@@ -17,7 +17,7 @@
             
                <div>
             <p>${produto.nome}
-            <a href="detalhe?id1=${produto.id}">
+            <a href="detalhe?id=${produto.id}">
                 <img src="../Imagens/Imagem0${produto.id}.jpg"
                      alt="produto ${produto.id}" />
             </a>

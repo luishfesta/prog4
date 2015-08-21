@@ -16,7 +16,16 @@ public class ProdutoDetalheServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        int id;
+
+        }
+    
+
+ 
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+                int id;
         String idParam;
         idParam = request.getParameter("id");
         id = Integer.parseInt(idParam);
@@ -27,14 +36,6 @@ public class ProdutoDetalheServlet extends HttpServlet {
         
         Produto produto;
         produto = manager.obterPorId(id);
-        
-        }
-    }
-
- 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
         
     }
 
