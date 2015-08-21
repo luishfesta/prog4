@@ -9,33 +9,49 @@ import java.util.List;
 
 public class ProdutoManager implements iProdutoManager{
 
-    private List<Produto> produtos;
+    private static List<Produto> produtos;
     
     
-    public ProdutoManager()
+    static
     {
             produtos = new ArrayList<>();
             Produto p1 = new Produto();
             p1.setId(1);
             p1.setNome("Processador");
-            p1.setPreço(new BigDecimal(500.0f));
+            p1.setPreço(new BigDecimal(550.0f));
             
             produtos.add(p1);
             
             Produto p2 = new Produto();
-            p1.setId(2);
-            p1.setNome("Celular");
-            p1.setPreço(new BigDecimal(900.0f));
+            p2.setId(2);
+            p2.setNome("Celular");
+            p2.setPreço(new BigDecimal(1050.0f));
 
+            produtos.add(p2);
+            
             Produto p3 = new Produto();
-            p1.setId(3);
-            p1.setNome("Cartucho");
-            p1.setPreço(new BigDecimal(900.0f));
+            p3.setId(3);
+            p3.setNome("Cartucho");
+            p3.setPreço(new BigDecimal(75.0f));
+            
+            produtos.add(p3);            
     }
+    
     @Override
     public List<Produto> obterProdutos() {
         return produtos;
         
+    }
+
+
+    @Override
+    public Produto obterPorId(int id) {
+              for (Produto produto : produtos)
+        {
+                if(produto.getId()== id )
+                    return produto;
+        }
+        return null;
     }
     
 
