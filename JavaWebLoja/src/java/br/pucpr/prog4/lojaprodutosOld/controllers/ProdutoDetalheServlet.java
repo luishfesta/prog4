@@ -3,7 +3,7 @@ package br.pucpr.prog4.lojaprodutosOld.controllers;
 
 import br.pucpr.prog4.lojaprodutosOld.models.Produto;
 import br.pucpr.prog4.lojaprodutosOld.models.ProdutoManager;
-import br.pucpr.prog4.lojaprodutosOld.models.iProdutoManager;
+import br.pucpr.prog4.lojaprodutosOld.models.ProdutoManagerImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +31,7 @@ public class ProdutoDetalheServlet extends HttpServlet {
         id = Integer.parseInt(idParam);
         
         
-        iProdutoManager manager;
+        ProdutoManagerImpl manager;
         manager = new ProdutoManager();
         
         Produto produto;

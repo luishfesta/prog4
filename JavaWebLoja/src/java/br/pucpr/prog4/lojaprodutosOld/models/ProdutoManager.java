@@ -7,7 +7,7 @@ import java.util.List;
 
 
 
-public class ProdutoManager implements iProdutoManager{
+public class ProdutoManager implements ProdutoManagerImpl{
 
     private static List<Produto> produtos;
     
