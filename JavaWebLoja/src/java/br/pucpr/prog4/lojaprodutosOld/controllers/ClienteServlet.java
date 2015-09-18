@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.pucpr.prog4.lojaprodutosOld.controllers;
+package br.pucpr.prog4.lojavirtual.controllers;
 
 import br.pucpr.prog4.lojavirtual.models.ClienteManager;
 import br.pucpr.prog4.lojavirtual.models.ClienteManagerImpl;
