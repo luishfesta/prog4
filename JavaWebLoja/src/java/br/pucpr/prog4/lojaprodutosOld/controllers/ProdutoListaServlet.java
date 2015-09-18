@@ -10,6 +10,7 @@ import br.pucpr.prog4.lojavirtual.models.Produto;
 import br.pucpr.prog4.lojavirtual.models.ProdutoManager;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author emanoelle.stival
  */
-public class ProdutoDetalheServlet extends HttpServlet {
+public class ProdutoListaServlet extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -31,10 +32,10 @@ public class ProdutoDetalheServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ProdutoDetalheServlet</title>");            
+            out.println("<title>Servlet LojaVirtual</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ProdutoDetalheServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LojaVirtual at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -44,24 +45,18 @@ public class ProdutoDetalheServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id;
-        String idParam;
-        idParam = request.getParameter("id");
-        id = Integer.parseInt(idParam);
         
         IProdutoManager manager;
         manager = new ProdutoManager();
+        List<Produto> produtos;
+        produtos = manager.obterTodos();
         
-        Produto produto;
-        produto = manager.obterPorId(id);
-        
-        String view;
-        view = "/WEB-INF/jsp/produto-detalhe.jsp";
+        request.setAttribute("produtos", produtos);
         RequestDispatcher rd;
-        rd = request.getRequestDispatcher(view);
+        rd = request.getRequestDispatcher("/WEB-INF/jsp/produtos-lista.jsp");
         rd.forward(request, response);
-        
     }
 
     
+
 }

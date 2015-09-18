@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>listaProdutosServlet</servlet-name>
-        <servlet-class>br.pucpr.prog4.lojaprodutosOld.controllers.listaProdutosServlet</servlet-class>
+        <servlet-name>LojaVirtual</servlet-name>
+        <servlet-class>br.pucpr.prog4.lojavirtual.controllers.ProdutoListaServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ProdutoDetalheServlet</servlet-name>
-        <servlet-class>br.pucpr.prog4.lojaprodutosOld.controllers.ProdutoDetalheServlet</servlet-class>
+        <servlet-class>br.pucpr.prog4.lojavirtual.controllers.ProdutoDetalheServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ClienteServlet</servlet-name>
-        <servlet-class>br.pucpr.prog4.lojaprodutosOld.controllers.ClienteServlet</servlet-class>
+        <servlet-class>br.pucpr.prog4.lojavirtual.controllers.ClienteServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>listaProdutosServlet</servlet-name>
+        <servlet-name>LojaVirtual</servlet-name>
         <url-pattern>/produto/lista</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -22,7 +22,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ClienteServlet</servlet-name>
-        <url-pattern>/Cliente/Cadastro</url-pattern>
+        <url-pattern>/cliente/cadastro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,60 +1,23 @@
 
-package br.pucpr.prog4.lojaprodutosOld.models;
+package br.pucpr.prog4.lojavirtual.models;
 
 import java.util.Date;
 
-public class Pessoa {
 
-    private int id;
-    private String tipo;
+public class Pessoa {
     private String nome;
-    private int CPF;
-    private Date dataNasc;
+    private Long cpf;
+    private Date dataNascimento;
+    private String tipoPessoa;
+    private Long id;
     private String sexo;
-    private String comentario;
-    
-    
-    
-    
-    
-    public int getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getCPF() {
-        return CPF;
-    }
-
-    public void setCPF(int CPF) {
-        this.CPF = CPF;
-    }
-
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
     }
 
     public String getSexo() {
@@ -65,17 +28,40 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
-    public String getComentario() {
-        return comentario;
+    public String getNome() {
+        return nome;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Long getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(Long cpf) {
+        this.cpf = cpf;
+    }
+
+    public Date getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getTipoPessoa() {
+        return tipoPessoa;
+    }
+
+    public void setTipoPessoa(String tipoPessoa) {
+        this.tipoPessoa = tipoPessoa;
     }
     
-
     
-    
-    
+    public Pessoa(){
+    }
     
 }

@@ -1,4 +1,4 @@
-package br.pucpr.prog4.lojaprodutosOld.dao;
+package br.pucpr.prog4.lojavirtual.models.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,19 +6,16 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 public class JdbcDaoManager implements IDaoManager 
 {
-    Connection conexão;
-
-    private JdbcPessoaDao pessoaDAO;
-    
-
+    private Connection conexão;
+    private JdbcPessoaDAO pessoaDAO;
     
     public JdbcDaoManager()
     {
-
+        
     }
-    
     
     @Override
     public void iniciar() throws DaoException
@@ -27,11 +24,12 @@ public class JdbcDaoManager implements IDaoManager
         {
             Class.forName("com.mysql.jdbc.Driver");
             String url;
-            url = "jdbc:mysql://localhost:3306/prog4dao";
-            conexão = DriverManager.getConnection(url, "root", "root");
+            url = "jdbc:mysql://localhost:3306/loja";
+            conexão = DriverManager.getConnection(url, 
+                                        "root", 
+                                        "root");
             conexão.setAutoCommit(false);
-            pessoaDAO = new 
-            
+            pessoaDAO = new JdbcPessoaDAO(conexão);
         }
         catch( Exception ex )
         {
@@ -53,22 +51,29 @@ public class JdbcDaoManager implements IDaoManager
 
     @Override
     public void confirmarTransação() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            conexão.commit();
+        } catch (SQLException ex) {
+            throw new DaoException("Ocorreu um erro ao confirmar a transação" 
+                        + ex.getMessage());
+        }
     }
 
     @Override
     public void abortarTransação() {
         try {
             conexão.rollback();
-        } catch (SQLException ex){
-            throw new DaoException("Ocorreu um erro ao confirmar a transação.");
+        } catch (SQLException ex) {
+            throw new DaoException("Ocorreu um erro ao confirmar a transação" 
+                        + ex.getMessage());
         }
     }
 
     @Override
-    public PessoaDao getPessoaDao() 
-    {
-        return pessoaDao;
+    public PessoaDAO getPessoaDAO() {
+        return pessoaDAO;
     }
+
+   
     
 }

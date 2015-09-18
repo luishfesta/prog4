@@ -1,6 +1,6 @@
-package br.pucpr.prog4.lojaprodutosOld.dao;
+package br.pucpr.prog4.lojavirtual.models.dao;
 
-public class DaoException extends RunTimeException {
+public class DaoException extends RuntimeException {
 
     public DaoException(String mensagem) 
     {

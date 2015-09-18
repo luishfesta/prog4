@@ -1,10 +1,18 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.pucpr.prog4.lojavirtual.models;
 
-package br.pucpr.prog4.lojaprodutosOld.models;
-
-
+/**
+ *
+ * @author emanoelle.stival
+ */
 public class Produto {
-
     private int id;
+    private Double preco;
+    private String nome;
 
     public int getId() {
         return id;
@@ -14,6 +22,14 @@ public class Produto {
         this.id = id;
     }
 
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -21,16 +37,7 @@ public class Produto {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public Number getPreço() {
-        return preço;
-    }
-
-    public void setPreço(Number preço) {
-        this.preço = preço;
-    }
-    private String nome;
-    private Number preço;
+    
     
     
 }
